@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My first app</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}"/>
+</head>
+<body>
+        <!-- {{ insert_me }}
+    <h1>Hello this is index html</h1>
+    
+    <img src="{% static "images/image.png" %}" alt="image"> -->
+
+    <h1>Hy! Welcome to django level two!</h1>
+    <h2>Here are the access records:</h2>
+        <div class="django">
+            {% if access_records %}
+                <table>
+                    <thead>
+                        <th>Site Name</th>
+                        <th>Date Access</th>
+                    </thead>
+                    <tbody>
+                        {% for acc in access_records %}
+                        <tr>
+                            <td>{{ acc.name }}</td>
+                            <td>{{ acc.date }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% else %}
+                <p>No Access records found</p>
+                {% endif %}
+        </div>
+
+</body>
+</html>
