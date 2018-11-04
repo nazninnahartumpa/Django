@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 {% load staticfiles %}
 <html lang="en">
 <head>
@@ -8,13 +8,13 @@
     <title>My first app</title>
     <link rel="stylesheet" href="{% static "css/style.css" %}"/>
 </head>
-<body>
+<body> -->
         <!-- {{ insert_me }}
     <h1>Hello this is index html</h1>
     
     <img src="{% static "images/image.png" %}" alt="image"> -->
 
-    <h1>Hy! Welcome to django level two!</h1>
+<!--     <h1>Hy! Welcome to django level two!</h1>
     <h2>Here are the access records:</h2>
         <div class="django">
             {% if access_records %}
@@ -32,10 +32,22 @@
                         {% endfor %}
                     </tbody>
                 </table>
-                {% else %}
+       -->          <!-- {% else %}
                 <p>No Access records found</p>
-                {% endif %}
-        </div>
+                {% endif %} -->
+<!--         </div>
+ -->
+<!-- </body>
+</html> -->
 
-</body>
-</html>
+
+
+        <div class="jumbotron">
+            <h1>This our first form page</h1>
+            <h3>This is the front page</h3>
+        </div>
+        {% if user.is_authenticated %}
+        <li><a class="navbar-link" href="{% url 'logout' %}">Logout</a></li>
+        {% else %}
+        <li><a class="navbar-link" href="{% url 'first_app:user_login' %}">Login</a></li>
+        {% endif %}
